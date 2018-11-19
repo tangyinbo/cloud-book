@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: eureka-client
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config-server8300
+  profiles:
+    active: dev
+  zipkin:
+    base-url: http://localhost:8400
+  sleuth:
+    sampler:
+      percentage: 1.0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/
+management:
+   security:
+     enabled: false
+logging:
+  file: "logs/eureka-client8200.log"
